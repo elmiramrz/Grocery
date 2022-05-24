@@ -1,0 +1,31 @@
+[
+ {
+  "Id":1 ,
+  "Name": "Milk",
+  "Quantity":2,
+  "Price": 4.90,
+  "ExpiryDate": "JN 07 2022" 
+ 
+ },
+ {
+ "Id":2,
+  "Name": "Cheese",
+  "Quantity":3,
+  "Price": 5.30,
+  "ExpiryDate":"Sep 12 2022"
+ },
+ {
+  "Id":3 ,
+  "Name": "Butter",
+  "Quantity":5,
+  "Price": 10.20,
+  "ExpiryDate":"Oct 22 2022"
+ },
+{
+"Id": 4,
+  "Name": "Orange Juice",
+  "Quantity":8,
+  "Price": 6.62,
+  "ExpiryDate":"Nov 01 2022"
+}
+]

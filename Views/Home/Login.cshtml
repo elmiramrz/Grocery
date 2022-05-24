@@ -1,0 +1,103 @@
+﻿
+@model ProductInventory.Models.UserAuthModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Frills</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <link href="~/Content/Login.css" rel="stylesheet" />
+</head>
+<body>
+
+    @using (Html.BeginForm("ProductEdit", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        <section class="vh-100">
+            <div class="container-fluid h-custom">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-9 col-lg-6 col-xl-5">
+                        <img src="~/Content/Image/foodFrillsLogo.png" id="iFlogo"
+                             class="img-fluid" alt="Sample image">
+                    </div>
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+
+                                <img src="~/Content/Image/logoTwitter.png" class="img-responsive img-circle img-rounded" />
+                            </button>
+
+                        </div>
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+
+                            <div class="form-outline mb-4">
+                                <input type="email" id="Email" class="form-control" />
+                                <label class="form-label" for="Email">Email</label>
+
+                                <br />
+                                <label>@Html.ValidationMessageFor(m => m.Email)</label>
+
+
+
+                            </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="Password" class="form-control" />
+                            <label class="form-label" for="Password">Password</label>
+
+                            <br />
+                            <label>@Html.ValidationMessageFor(m => m.Password)</label>
+                        </div>
+
+
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                             <button type="button" class="btn btn-primary btn-lg" id="bLogin"
+                                    style="padding-left: 2.5rem; padding-right: 2.5rem;" onclick="@("window.location.href='" + @Url.Action("ProductEdit", "HomeController") + "'") ">
+                                Login
+                            </button>
+                          
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+</div>
+        </section>
+
+
+        <!-- <div class="container body-content">
+            @RenderBody()
+
+        </div>-->
+
+    }
+    </body>
+
+
+@RenderSection("scripts", required: false)
+
+
+
+</html>
+
+

@@ -1,0 +1,63 @@
+﻿@model List<ProductInventory.Models.ItemModel>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            //Call ProductEdit jsonResult Method
+            $.getJSON("Homeontroller/ProductEdit",
+                function (json) {
+                    var tr;
+                    //Append each row to html table
+                    for (var i = 0; i < json.length; i++) {
+                        tr = $('<tr/>');
+                        tr.append("<td>" + json[i].Id + "</td>");
+                        tr.append("<td>" + json[i].Name + "</td>");
+                        tr.append("<td>" + json[i].Quantity + "</td>");
+                        tr.append("<td>" + json[i].Price + "</td>");
+                        tr.append("<td>" + json[i].ExpiryDate + "</td>");
+                        $('table').append(tr);
+                    }
+                });
+    });
+</script>
+   
+    <style>
+        table, th, td {
+            margin: 10px 0;
+            border: solid 1px #333;
+            padding: 2px 4px;
+            font: 15px Verdana;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+
+<div class="text-center">
+
+    <table class="table table-bordered table-condensed table-hover table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Expiry Date</th>
+
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+</div>
+@RenderBody()
+
+
+
+
+
